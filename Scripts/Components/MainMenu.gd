@@ -13,12 +13,13 @@ extends Control
 # These match the node names you will create in MainMenu.tscn.
 # Adjust paths if your scene tree differs.
 
+@onready var btn_container: VBoxContainer = $Layout/ButtonContainer
 @onready var btn_new_game: Button = $Layout/ButtonContainer/NewGame
 @onready var btn_continue: Button = $Layout/ButtonContainer/Continue
 @onready var btn_quit: Button = $Layout/ButtonContainer/Quit
 @onready var slot_panel: Control = $Layout/SlotPanel
-@onready var slot_container: VBoxContainer = $Layout/SlotPanel/SlotContainer
-@onready var slot_label: Label = $Layout/SlotPanel/SlotLabel
+@onready var slot_container: VBoxContainer = $Layout/SlotPanel/Separator/SlotContainer
+@onready var slot_label: Label = $Layout/SlotPanel/Separator/SlotLabel
 
 ## Preloaded slot entry scene — a small panel showing day, playtime, date.
 ## Create SlotEntry.tscn as a simple panel with labels; wire it below.
@@ -88,10 +89,12 @@ func _show_slot_panel() -> void:
 		entry.slot_selected.connect(_on_slot_selected)
 
 	slot_panel.visible = true
+	btn_container.visible = false
 
 
 func _on_slot_selected(slot_index: int) -> void:
 	slot_panel.visible = false
+	btn_container.visible = true
 
 	if _picking_for_new_game:
 		SaveManager.new_game(slot_index)

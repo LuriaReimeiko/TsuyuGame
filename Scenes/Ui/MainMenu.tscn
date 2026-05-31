@@ -41,11 +41,14 @@ layout_mode = 2
 text = "Quit"
 
 [node name="SlotPanel" type="PanelContainer" parent="Layout" unique_id=1292287415]
-visible = false
 layout_mode = 2
 
-[node name="SlotLabel" type="Label" parent="Layout/SlotPanel" unique_id=2012978255]
+[node name="Separator" type="VBoxContainer" parent="Layout/SlotPanel" unique_id=1283634963]
 layout_mode = 2
 
-[node name="SlotContainer" type="VBoxContainer" parent="Layout/SlotPanel" unique_id=1706529779]
+[node name="SlotLabel" type="Label" parent="Layout/SlotPanel/Separator" unique_id=2012978255]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="SlotContainer" type="VBoxContainer" parent="Layout/SlotPanel/Separator" unique_id=1706529779]
 layout_mode = 2
