@@ -18,6 +18,7 @@ offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "Overworld placeholder\\nPress Escape to return to menu"
+text = "Overworld placeholder
+Press Escape to return to menu"
 horizontal_alignment = 1
 vertical_alignment = 1
