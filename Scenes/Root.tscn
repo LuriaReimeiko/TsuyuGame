@@ -7,6 +7,7 @@ script = ExtResource("1_a5hps")
 
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1340143582]
 layer = 10
+follow_viewport_enabled = true
 
 [node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer" unique_id=1008514345]
 anchors_preset = 15
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="SceneContainer" type="Node" parent="." unique_id=1123433458]
