@@ -14,6 +14,13 @@ config/name="TsuyuGame"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*uid://hqlcntwbbw1i"
+GameManager="*uid://brgf2ld4yiyq8"
+SceneManager="*uid://cdx040a1f4x6p"
+SaveManager="*uid://n0duu5k7rsc0"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
