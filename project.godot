@@ -11,7 +11,12 @@ config_version=5
 [application]
 
 config/name="TsuyuGame"
+config/version="0.0.0"
+run/main_scene="uid://d2d4ilcgaahw8"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "Mobile")
+run/max_fps=580
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,11 +26,53 @@ GameManager="*uid://brgf2ld4yiyq8"
 SceneManager="*uid://cdx040a1f4x6p"
 SaveManager="*uid://n0duu5k7rsc0"
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/initial_position_type=4
+window/size/sharp_corners=true
+window/energy_saving/keep_screen_on=false
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
+[gui]
+
+theme/custom_font="uid://c2toe5t8h6ea1"
+
+[importer_defaults]
+
+font_data_dynamic={
+"Compress": null,
+"Fallbacks": null,
+"Rendering": null,
+"allow_system_fallback": true,
+"antialiasing": 0,
+"compress": true,
+"disable_embedded_bitmaps": true,
+"fallbacks": [],
+"force_autohinter": false,
+"generate_mipmaps": false,
+"hinting": 2,
+"keep_rounding_remainders": true,
+"language_support": {},
+"modulate_color_glyphs": false,
+"msdf_pixel_range": 8,
+"msdf_size": 48,
+"multichannel_signed_distance_field": false,
+"opentype_features": {},
+"oversampling": 0.0,
+"preload": [],
+"script_support": {},
+"subpixel_positioning": 0
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"

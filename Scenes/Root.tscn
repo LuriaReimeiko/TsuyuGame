@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d2d4ilcgaahw8"]
+
+[ext_resource type="Script" uid="uid://cgmssth72ujeo" path="res://Scripts/Components/Root.gd" id="1_a5hps"]
+
+[node name="Root" type="Node" unique_id=1529732425]
+script = ExtResource("1_a5hps")
+
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1340143582]
+layer = 10
+
+[node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer" unique_id=1008514345]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SceneContainer" type="Node" parent="." unique_id=1123433458]

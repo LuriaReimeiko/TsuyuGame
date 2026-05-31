@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cn3bm2m4tsy4k"]
+
+[ext_resource type="Script" uid="uid://0j3lfindckjg" path="res://Scripts/Components/SlotEntry.gd" id="1_nswrq"]
+
+[node name="SlotEntry" type="PanelContainer" unique_id=1900547500]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nswrq")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1159714561]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Row" type="HBoxContainer" parent="Margin" unique_id=1665272773]
+layout_mode = 2
+
+[node name="Slot" type="Label" parent="Margin/Row" unique_id=1023927155]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Slot 1"
+
+[node name="Info" type="Label" parent="Margin/Row" unique_id=1398587697]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Empty"
+
+[node name="Date" type="Label" parent="Margin/Row" unique_id=715303876]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Select" type="Button" parent="Margin/Row" unique_id=685793180]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Load"

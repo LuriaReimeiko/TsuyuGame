@@ -26,7 +26,7 @@ extends Node
 
 const CURRENT_VERSION: int = 1
 const SAVE_DIR: String = "user://saves/"
-const SLOT_COUNT: int = 3
+const SLOT_COUNT: int = 5
 const SLOT_NAME_TEMPLATE: String = "slot_%d.sav"
 
 

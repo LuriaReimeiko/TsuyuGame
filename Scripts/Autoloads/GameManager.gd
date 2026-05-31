@@ -61,11 +61,7 @@ const VALID_TRANSITIONS: Dictionary = {
 #  State                                                               #
 # ------------------------------------------------------------------ #
 
-var current_mode: Mode = Mode.NONE:
-	get:
-		return current_mode
-	set(value):
-		push_error("GameManager: assign current_mode directly. Use request_mode_change().")
+var current_mode: Mode = Mode.NONE
 
 ## Mode stored before entering PAUSED so it can be resumed.
 var _mode_before_pause: Mode = Mode.NONE
