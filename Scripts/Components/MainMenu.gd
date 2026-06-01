@@ -47,6 +47,16 @@ func _ready() -> void:
 	_refresh_continue_button()
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	# Escape: Return to default state
+	if event.is_action_pressed("ui_cancel"):
+		if slot_panel.visible:
+			slot_panel.visible = false
+			btn_container.visible = true
+		else:
+			get_tree().quit()
+
+
 # ------------------------------------------------------------------ #
 #  Button handlers                                                     #
 # ------------------------------------------------------------------ #
