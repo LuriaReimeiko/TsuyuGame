@@ -79,13 +79,13 @@ func _connect_signals() -> void:
 # ------------------------------------------------------------------ #
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not OS.is_debug_build():
-		return
+	#if not OS.is_debug_build():
+		#return
 
 	# F5: manual save
 	if event.is_action_pressed("ui_focus_next"):
 		EventBus.save_requested.emit()
-		print("Dev: manual save triggered.")
+		print("Manual save triggered.")
 
 	# Escape: return to main menu
 	if event.is_action_pressed("ui_cancel"):
