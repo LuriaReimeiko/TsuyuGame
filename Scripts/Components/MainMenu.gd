@@ -53,8 +53,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		if slot_panel.visible:
 			slot_panel.visible = false
 			btn_container.visible = true
-		else:
-			get_tree().quit()
 
 
 # ------------------------------------------------------------------ #
@@ -74,7 +72,8 @@ func _on_continue_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	if OS.get_name() != "Web":
+		get_tree().quit()
 
 
 # ------------------------------------------------------------------ #
