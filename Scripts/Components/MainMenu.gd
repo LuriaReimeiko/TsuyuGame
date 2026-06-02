@@ -72,7 +72,13 @@ func _on_continue_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	if OS.get_name() != "Web":
+	if OS.get_name() == "Web":
+		var ok: bool = GameManager.request_mode_change(GameManager.Mode.WEB_EMPTY)
+		if not ok:
+			push_error("MainMenu: GameManager rejected transition to WEB_EMPTY.")
+			return
+		SceneManager.go_to(SceneManager.SceneID.WEB_EMPTY)
+	else:
 		get_tree().quit()
 
 

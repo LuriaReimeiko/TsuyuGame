@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://drjpe7pvqf653"]
+
+[ext_resource type="Script" uid="uid://cvimbdwonlsms" path="res://Scripts/Components/Web_Empty.gd" id="1_csmfw"]
+
+[node name="WebEmpty" type="Control" unique_id=1538648189]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_csmfw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=940167259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

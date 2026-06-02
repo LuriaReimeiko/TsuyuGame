@@ -20,6 +20,7 @@ extends Node
 
 enum SceneID {
 	MAIN_MENU,
+	WEB_EMPTY,
 	OVERWORLD,
 	RESTAURANT,
 	GATHERING_FOREST,
@@ -29,6 +30,7 @@ enum SceneID {
 
 const SCENE_PATHS: Dictionary = {
 	SceneID.MAIN_MENU:        "res://Scenes/Ui/MainMenu.tscn",
+	SceneID.WEB_EMPTY:        "res://Scenes/Ui/WebEmpty.tscn",
 	SceneID.OVERWORLD:        "res://Scenes/World/Overworld.tscn",
 	SceneID.RESTAURANT:       "res://Scenes/Restaurant/Restaurant.tscn",
 	SceneID.GATHERING_FOREST: "res://Scenes/Gathering/ForestZone.tscn",

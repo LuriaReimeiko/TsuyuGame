@@ -21,6 +21,7 @@ html, body {
     color: var(--text);
     font-family: "Space Mono", monospace;
     overflow: hidden;
+    user-select: none;
 }
 
 body {
@@ -152,7 +153,6 @@ input[type="range"]::-moz-range-track {
     font-size: 0.72rem;
     min-width: 30px;
     text-align: center;
-    user-select: none;
 }
 
 /* fullscreen */

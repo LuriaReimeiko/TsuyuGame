@@ -18,6 +18,7 @@ extends Node
 enum Mode {
 	NONE,        ## Initial state before a save is loaded.
 	MAIN_MENU,
+	WEB_EMPTY,
 	OVERWORLD,
 	RESTAURANT,  ## Service is running.
 	BUILD,       ## Restaurant build/edit mode (sub-state of RESTAURANT context).
@@ -30,6 +31,7 @@ enum Mode {
 const MODE_NAMES: Dictionary = {
 	Mode.NONE:       "None",
 	Mode.MAIN_MENU:  "MainMenu",
+	Mode.WEB_EMPTY:  "WebEmpty",
 	Mode.OVERWORLD:  "Overworld",
 	Mode.RESTAURANT: "Restaurant",
 	Mode.BUILD:      "Build",
@@ -47,7 +49,8 @@ const MODE_NAMES: Dictionary = {
 
 const VALID_TRANSITIONS: Dictionary = {
 	Mode.NONE:       [Mode.MAIN_MENU],
-	Mode.MAIN_MENU:  [Mode.OVERWORLD],
+	Mode.MAIN_MENU:  [Mode.OVERWORLD, Mode.WEB_EMPTY],
+	Mode.WEB_EMPTY:  [Mode.MAIN_MENU],
 	Mode.OVERWORLD:  [Mode.RESTAURANT, Mode.FARM, Mode.MAIN_MENU],
 	Mode.RESTAURANT: [Mode.BUILD, Mode.OVERWORLD, Mode.PAUSED],
 	Mode.BUILD:      [Mode.RESTAURANT, Mode.PAUSED],
