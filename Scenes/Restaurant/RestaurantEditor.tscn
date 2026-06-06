@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://gnbkt5bjikt6"]
+
+[ext_resource type="Script" uid="uid://b48fj1x8dh5v6" path="res://Scripts/Components/RestaurantEditor.gd" id="1_n3mw0"]
+
+[node name="RestaurantEditor" type="Node2D" unique_id=801621256]
+script = ExtResource("1_n3mw0")
+
+[node name="GridManager" type="Node2D" parent="." unique_id=366955998]
+
+[node name="PlacementController" type="Node2D" parent="." unique_id=241778591]
+
+[node name="EditorUI" type="CanvasLayer" parent="." unique_id=1281720955]
+layer = 5
+
+[node name="Panel" type="PanelContainer" parent="EditorUI" unique_id=2077625964]
+custom_minimum_size = Vector2(180, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 34.0
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="EditorUI/Panel" unique_id=1965408826]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EditorUI/Panel/VBox" unique_id=384858024]
+layout_mode = 2
+text = "Palette"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Toolbar" type="ScrollContainer" parent="EditorUI/Panel/VBox" unique_id=967829026]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PaletteContainer" type="VBoxContainer" parent="EditorUI/Panel/VBox/Toolbar" unique_id=290280031]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Erase" type="Button" parent="EditorUI/Panel/VBox" unique_id=1302684880]
+layout_mode = 2
+toggle_mode = true
+text = "Erase"
+
+[node name="Done" type="Button" parent="EditorUI/Panel/VBox" unique_id=952578577]
+layout_mode = 2
+text = "Done"
+
+[node name="InfoBar" type="PanelContainer" parent="EditorUI" unique_id=971116363]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+offset_right = 180.0
+offset_bottom = 360.0
+size_flags_vertical = 8
+
+[node name="Info" type="Label" parent="EditorUI/InfoBar" unique_id=830543633]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1

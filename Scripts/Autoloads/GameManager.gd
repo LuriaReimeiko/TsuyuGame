@@ -10,21 +10,16 @@ extends Node
 ## GameManager.request_mode_change() so the transition is validated
 ## and the signal fires exactly once.
 
-
-# ------------------------------------------------------------------ #
-#  Mode definition                                                     #
-# ------------------------------------------------------------------ #
-
 enum Mode {
-	NONE,        ## Initial state before a save is loaded.
+	NONE,
 	MAIN_MENU,
 	WEB_EMPTY,
 	OVERWORLD,
-	RESTAURANT,  ## Service is running.
-	BUILD,       ## Restaurant build/edit mode (sub-state of RESTAURANT context).
-	FARM,        ## Tending the plot outside the restaurant.
-	MINIGAME,    ## An active minigame (fishing, foraging prompt, etc.).
-	PAUSED,      ## Game is paused; previous mode is stored for resume.
+	RESTAURANT,
+	BUILD,
+	FARM,
+	MINIGAME,
+	PAUSED,
 }
 
 # Human-readable names used for debug output only.
@@ -40,20 +35,13 @@ const MODE_NAMES: Dictionary = {
 	Mode.PAUSED:     "Paused",
 }
 
-
-# ------------------------------------------------------------------ #
-#  Valid transitions table                                             #
-# ------------------------------------------------------------------ #
-# Explicit allowlist keeps accidental transitions from silently        #
-# succeeding. Add entries here as new transitions become necessary.    #
-
 const VALID_TRANSITIONS: Dictionary = {
 	Mode.NONE:       [Mode.MAIN_MENU],
 	Mode.MAIN_MENU:  [Mode.OVERWORLD, Mode.WEB_EMPTY],
 	Mode.WEB_EMPTY:  [Mode.MAIN_MENU],
 	Mode.OVERWORLD:  [Mode.RESTAURANT, Mode.FARM, Mode.MAIN_MENU],
 	Mode.RESTAURANT: [Mode.BUILD, Mode.OVERWORLD, Mode.PAUSED],
-	Mode.BUILD:      [Mode.RESTAURANT, Mode.PAUSED],
+	Mode.BUILD:      [Mode.RESTAURANT, Mode.OVERWORLD, Mode.PAUSED],
 	Mode.FARM:       [Mode.OVERWORLD, Mode.PAUSED],
 	Mode.MINIGAME:   [Mode.OVERWORLD],
 	Mode.PAUSED:     [Mode.RESTAURANT, Mode.BUILD, Mode.OVERWORLD, Mode.FARM],
@@ -65,13 +53,10 @@ const VALID_TRANSITIONS: Dictionary = {
 # ------------------------------------------------------------------ #
 
 var current_mode: Mode = Mode.NONE
-
-## Mode stored before entering PAUSED so it can be resumed.
 var _mode_before_pause: Mode = Mode.NONE
 
 ## Master time scale applied to all in-game timers.
-## 1.0 = normal speed. Does NOT affect Engine.time_scale (which would
-## also slow down UI animations and input). Managed manually per timer.
+## 1.0 = normal speed. Managed manually per timer.
 var time_scale: float = 1.0:
 	set(value):
 		time_scale = clampf(value, 0.1, 5.0)
